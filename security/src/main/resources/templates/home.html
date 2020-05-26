@@ -1,0 +1,58 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+
+    <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8"/>
+    <!-- Bootstrap -->
+    <link href="//maxcdn.bootstrapcdn.com/bootstrap/4.1.1/css/bootstrap.min.css" rel="stylesheet" id="bootstrap-css">    
+    <!-- CSS (Site) -->
+    <link th:href="@{/css/layoutSite.css}" rel="stylesheet"/>
+        
+</head>
+
+<body>    
+    <!-- Conteiner (Paginas) -->
+    <div class="container">
+        <nav class="main-menu">
+            <ul>
+                <!-- Link (Home) -->
+                <li>
+                    <a href="#" th:href="@{/home}">
+                        <i class="fa fa-home fa-2x"></i>
+                        <span class="nav-text">
+                            Home
+                        </span>
+                    </a>                  
+                </li>                
+            </ul>
+        </nav>
+        <!-- Logout -->
+        <div layout:fragment="content">
+            <div>
+                <h1>Estudo de Caso Spring Boot - Heliton Rezende.</h1>
+                <h2><p><span>FrameWorks Utilizados:</span></p></h2>
+                <ul>
+                    <li><a href='https://mvnrepository.com'>Maven</a></li>
+                    <li><a href='https://spring.io/projects/spring-boot/'>Spring Boot</a></li>
+                    <li><a href='https://spring.io/projects/spring-security'>Security</a></li>
+                    <li><a href='https://spring.io/projects/spring-data-jpa'>JPA com Hibernat</a></li>
+                    <li><a href='http://getbootstrap.com/'>Bootstrap</a></li>
+                </ul>
+                <h4><p><span>Objetivos:</span></p></h4>
+                <ul>
+                    <li><strong>Validar usuário: </strong>Security.</li>
+                    <li><strong>Acesso ao banco de dados: </strong>JPA e Hibernate</li>
+                </ul>
+            </div>
+            <form method="post" class="navbar-form navbar-right" th:action="@{/logout}">
+                <button type="submit" class="btn btn-primary">
+                <span class="glyphicon glyphicon-log-out"></span> 
+                    Logout
+                </button>
+            </form>
+        </div>
+    </div>
+</body>
+
+</html>
